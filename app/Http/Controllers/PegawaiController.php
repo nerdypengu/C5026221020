@@ -38,7 +38,7 @@ class PegawaiController extends Controller
 			'pegawai_alamat' => $request->alamat
 		]);
 		// alihkan halaman ke halaman pegawai
-		return redirect('/pegawai');
+		return redirect('/pegawai/{id}');
 
 	}
 
@@ -63,7 +63,7 @@ class PegawaiController extends Controller
 			'pegawai_alamat' => $request->alamat
 		]);
 		// alihkan halaman ke halaman pegawai
-		return redirect('/pegawai');
+		return redirect('/view');
 	}
 
 	// method untuk hapus data pegawai
@@ -90,4 +90,11 @@ class PegawaiController extends Controller
 		return view('index',['pegawai' => $pegawai, 'cari' => $cari]);
 
 	}
+
+    public function view($id){
+		// mengambil data pegawai berdasarkan id yang dipilih
+		$pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
+		// passing data pegawai yang didapat ke view edit.blade.php
+		return view('view',['pegawai' => $pegawai]);
+    }
 }
