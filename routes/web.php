@@ -100,7 +100,7 @@ Route::get('/blog/kontak', function () {
     return view('kontak');
 });
 
-//route CRUD
+//route CRUD Pegawai
 Route::get('/pegawai','App\Http\Controllers\PegawaiController@index');
 Route::get('/pegawai/tambah','App\Http\Controllers\PegawaiController@tambah');
 Route::post('/pegawai/store','App\Http\Controllers\PegawaiController@store');
@@ -111,8 +111,21 @@ Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
 Route::get('/pegawai/view/{id}','App\Http\Controllers\PegawaiController@view');
 
 
-//route CRUD
+//route CRUD Keranjang Belanja
 Route::get('/keranjangbelanja','App\Http\Controllers\KeranjangController@index');
 Route::get('/keranjangbelanja/beli','App\Http\Controllers\KeranjangController@beli');
 Route::post('/keranjangbelanja/store','App\Http\Controllers\KeranjangController@store');
 Route::get('/keranjangbelanja/hapus/{id}','App\Http\Controllers\KeranjangController@hapus');
+
+//route CRUD Keyboard
+Route::get('/keyboard','App\Http\Controllers\KeyboardController@index');
+Route::get('/keyboard/tambah','App\Http\Controllers\KeyboardController@tambah');
+Route::post('/keyboard/store','App\Http\Controllers\KeyboardController@store');
+Route::get('/keyboard/edit/{id}','App\Http\Controllers\KeyboardController@edit');
+Route::post('/keyboard/update','App\Http\Controllers\KeyboardController@update');
+Route::get('/keyboard/hapus/{id}','App\Http\Controllers\KeyboardController@hapus');
+
+//route CRUD nilaikuliah
+Route::get('/nilaikuliah','App\Http\Controllers\NilaiController@index');
+Route::get('/nilaikuliah/tambahData','App\Http\Controllers\NilaiController@tambah');
+Route::post('/nilaikuliah/store','App\Http\Controllers\NilaiController@store');
