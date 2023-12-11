@@ -63,7 +63,7 @@ class PegawaiController extends Controller
 			'pegawai_alamat' => $request->alamat
 		]);
 		// alihkan halaman ke halaman pegawai
-		return redirect('/view');
+		return redirect('pegawai/view/' . $request->id);
 	}
 
 	// method untuk hapus data pegawai
