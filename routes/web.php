@@ -129,3 +129,10 @@ Route::get('/keyboard/hapus/{id}','App\Http\Controllers\KeyboardController@hapus
 Route::get('/nilaikuliah','App\Http\Controllers\NilaiController@index');
 Route::get('/nilaikuliah/tambahData','App\Http\Controllers\NilaiController@tambah');
 Route::post('/nilaikuliah/store','App\Http\Controllers\NilaiController@store');
+
+
+//route CRUD Mahasiswa
+Route::get('/mahasiswa','App\Http\Controllers\MahasiswaController@index');
+Route::get('/mahasiswa/edit/{id}','App\Http\Controllers\MahasiswaController@edit');
+Route::post('/mahasiswa/update','App\Http\Controllers\MahasiswaController@update');
+Route::get('/mahasiswa/view/{id}','App\Http\Controllers\MahasiswaController@view');
